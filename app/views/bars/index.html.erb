@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Picture</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bars.each do |bar| %>
+      <tr>
+        <td><%= bar.title %></td>
+        <td><%= bar.content %></td>
+        <td><%= bar.picture %></td>
+        <td><%= bar.latitude %></td>
+        <td><%= bar.longitude %></td>
+        <td><%= bar.description %></td>
+        <td><%= link_to 'Show', bar %></td>
+        <td><%= link_to 'Edit', edit_bar_path(bar) %></td>
+        <td><%= link_to 'Destroy', bar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bar', new_bar_path %>
